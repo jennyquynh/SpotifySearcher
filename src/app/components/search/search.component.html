@@ -1,1 +1,32 @@
-SEARCH
+<h1 class="title">Need Music?</h1>
+<p>Type in any artist in the search bar below!</p>
+<form>
+    <div class ="form-group">
+        <!-- 
+            input will modify the searchStr variable in search.ts
+            input will also call the searchMusic method in search.ts to make a GET request
+        -->
+        <input 
+        [(ngModel)]="searchStr"
+        type="text" 
+        name="searchStr" 
+        class="form-control" 
+        placeholder="Search Music..."
+        (keyup)="searchMusic()"/>
+    </div>
+</form>
+
+<div *ngIf="searchRes">
+    <div *ngFor="let res of searchRes">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-dismissible alert-primary artist-card">
+                    <h4 class="alert-heading artist-info"><a routerLink="/artist/{{res.id}}">{{res.name}}</a></h4>
+                    <div style="opacity: 0.5;">
+                        <strong>Genres: </strong>
+                        <span *ngFor="let genre of res.genres">{{genre}}, </span>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
