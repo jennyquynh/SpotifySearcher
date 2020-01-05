@@ -1,2 +1,1 @@
-# SpotifySearcher
-First Angular app. Uses the Spotify API to display requested songs.
+My first Angular application. Uses the Spotify API to display requested songs.
