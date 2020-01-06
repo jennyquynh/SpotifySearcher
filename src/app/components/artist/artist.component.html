@@ -1,3 +1,44 @@
 <div *ngIf="artist">
-    {{artist.name}}
+    <header class="artist-header">
+        <div class="row">
+            <div class="col-md-4" *ngIf = 'artist.images.length > 0'>
+                <img class="artist-thumb" src = '{{artist.images[0].url}}'>
+            </div>
+            <div class="col-md-8">
+                <h1 class="artist-name">{{artist.name}}</h1>
+                <div class="artist-info-p">
+                    <p *ngIf="artist.genres.length > 0" class="artist-info">
+                        Genre: <span *ngFor = "let genre of artist.genres">{{genre}}--</span>
+                    </p>
+                    <p class="artist-info">
+                        Followers:  <span>{{artist.followers.total}}  <i class="fas fa-eye icon"></i></span>
+                    </p>
+                    <p class="artist-info">
+                        Popularity:  <span>{{artist.popularity}}  <i class="fas fa-heart icon"></i></span>
+                    </p>
+                </div>
+                <a class="btn btn-primary" id="album-view"href="{{artist.external_urls.spotify}}" target="_blank">View in Spotify</a>
+
+            </div>
+        </div>
+    </header>
+
+
+    <div class="artist-albums">
+        <div class="row">
+            <div class="col-md-3 mb-3" *ngFor='let album of albums'>
+                <div>
+                    <div class="well album">
+                        <div *ngIf = 'album.images.length > 0'>
+                            <img id="album-thumb" class="img-thumbnail" src="{{album.images[0].url}}">
+                            <div id="album-card">
+                                <h4 class="album-name"><a id="album-link" routerLink="/album/{{album.id}}">{{album.name}}</a></h4>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

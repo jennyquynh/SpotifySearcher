@@ -11,40 +11,36 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var spotify_service_1 = require("../../services/spotify.service");
 var router_1 = require("@angular/router");
-var ArtistComponent = (function () {
-    function ArtistComponent(_spotifyService, _route) {
+var AlbumComponent = (function () {
+    function AlbumComponent(_spotifyService, _route) {
         this._spotifyService = _spotifyService;
         this._route = _route;
     }
-    ArtistComponent.prototype.ngOnInit = function () {
+    AlbumComponent.prototype.ngOnInit = function () {
         var _this = this;
         this._route.params
             .map(function (params) { return params['id']; })
             .subscribe(function (id) {
             _this._spotifyService.getToken()
                 .subscribe(function (data) {
-                _this._spotifyService.getArtist(id, data.access_token)
-                    .subscribe(function (artist) {
-                    _this.artist = artist;
-                });
-                _this._spotifyService.getAlbums(id, data.access_token)
-                    .subscribe(function (albums) {
-                    _this.albums = albums.items;
+                _this._spotifyService.getAlbum(id, data.access_token)
+                    .subscribe(function (album) {
+                    _this.album = album;
                 });
             });
         });
     };
-    return ArtistComponent;
+    return AlbumComponent;
 }());
-ArtistComponent = __decorate([
+AlbumComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        selector: 'artist',
-        templateUrl: 'artist.component.html',
+        selector: 'album',
+        templateUrl: 'album.component.html',
         providers: [spotify_service_1.SpotifyService]
     }),
     __metadata("design:paramtypes", [spotify_service_1.SpotifyService,
         router_1.ActivatedRoute])
-], ArtistComponent);
-exports.ArtistComponent = ArtistComponent;
-//# sourceMappingURL=artist.component.js.map
+], AlbumComponent);
+exports.AlbumComponent = AlbumComponent;
+//# sourceMappingURL=album.component.js.map

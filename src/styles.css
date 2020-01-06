@@ -1,6 +1,8 @@
 
+/*----------------------------- artist search -------------------------*/
+
 .artist-info a {
-    color:#112840;
+    color: black;
     text-decoration: none;
 }
 
@@ -13,10 +15,11 @@
 }
 
 .title {
-    margin-top: 2rem;
+    margin-top: 0rem;
     color: #3e6d9c;
 }
 
+/*----------------------------------------- nav ------------------------------*/
 #nav-title {
     color: #447bb3;
     font-weight: bold;
@@ -34,4 +37,141 @@
 
 #nav-title:hover {
     color: #74abe3;
+}
+
+/*----------------------------------- artist page -----------------------------*/
+
+.artist-header {
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+}
+
+.row {
+    /*margin-bottom: 4rem;*/
+}
+
+.artist-thumb {
+    width: 80%;
+    height: auto;
+    float: left;
+    margin-right: 3rem;
+}
+
+.container {
+    padding: 4rem 1rem;
+    margin: auto;
+}
+
+.artist-body {
+    margin-bottom: 2rem;
+}
+
+.genres {
+    opacity: .5;
+}
+
+.artist-albums {
+margin-top: 3rem;
+}
+
+#album-thumb {
+    padding: 0px;
+    border: 0;
+}
+
+.artist-info{
+    opacity: .3;
+}
+
+.artist-name {
+    color: #447bb3;
+}
+
+.album-name {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+#album-card {
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+}
+
+.icon {
+    margin-left: 2px;
+}
+
+#album-link {
+    color: #447bb3;
+    text-decoration: none;
+}
+
+#album-link:hover {
+    color: #6ba0d6;
+}
+
+.artist-info-p {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+/*------------------------ album page -------------------------*/
+
+.album-page-thumb {
+    width: 80%;
+    height: auto;
+}
+
+#album-page-title {
+    color: #447bb3;
+}
+
+#album-page-info {
+    margin: 0;
+}
+
+#album-view {
+    margin-top: 2rem;
+    color: #1c334d;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+#track-name {
+    margin: 0px;
+    margin-top: 9px;
+    margin-left: 13px;
+    color: #1c334d;
+}
+
+.track-card {
+    padding: 1rem;
+}
+
+.album-tracks {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.album-tracks h2 {
+    margin-bottom: 1rem;
+}
+
+.track-info-p {
+    opacity: .3;
+    margin-top: 1rem;
+}
+
+/*------------------------------ about --------------------------*/
+
+.about-page h2 {
+    color: #3e6d9c;
+    margin-bottom: 3rem;
+}
+
+.about-page-section {
+    margin-bottom: 3rem;
 }

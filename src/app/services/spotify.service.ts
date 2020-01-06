@@ -66,13 +66,27 @@ export class SpotifyService{
     getAlbums(artistId:string, token:string){
 
         //query
-        this.AlbumsUrl= 'https://api.spotify.com/v1/artist/'+ artistId + 'albums/?query=&limit=20';
+        this.AlbumsUrl= 'https://api.spotify.com/v1/artists/'+ artistId + '/albums/?query=&limit=50';
 
         let headers = new Headers();
         headers.append('Authorization', 'Bearer ' + token);
 
         //return result of the get
         return this._http.get(this.AlbumsUrl, {headers : headers})
+        .map((res: Response) => res.json());
+    }
+
+    //get album
+    getAlbum(albumId:string, token:string){
+
+        //query
+        this.AlbumUrl= 'https://api.spotify.com/v1/albums/' + albumId;
+
+        let headers = new Headers();
+        headers.append('Authorization', 'Bearer ' + token);
+
+        //return result of the get
+        return this._http.get(this.AlbumUrl, {headers : headers})
         .map((res: Response) => res.json());
     }
 }
